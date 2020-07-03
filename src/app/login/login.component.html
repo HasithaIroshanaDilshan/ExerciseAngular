@@ -1,0 +1,42 @@
+<div>
+	<app-navigation-bar></app-navigation-bar>
+
+	<div class="card mx-auto mt-3" style="width: 30rem;">
+		<div class="card-header">
+			<h3 class="text-center">Sign in</h3>
+		</div>
+
+		<form class="text-center border border-light p-5" [formGroup]="loginForm">
+			<!-- Email -->
+			<input type="email" id="loginEmail" class="form-control mb-1" placeholder="E-mail" formControlName="email"
+				required>
+			<div *ngIf="submitted && fc.email.invalid">
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<div *ngIf="fc.email.errors.required">Email is required</div>
+					<div *ngIf="fc.email.errors.email && !fc.email.errors.required">Invalid email</div>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeAlert()">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			</div>
+			<!-- Password -->
+			<input type="password" id="formPassword" class="form-control mb-1 mt-4" placeholder="Password"
+				formControlName="password" required>
+			<div *ngIf="submitted && fc.password.invalid">
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<div *ngIf="fc.password.errors.required">Password is required</div>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeAlert()">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary mt-4" style="width: 18rem;" (click)="signIn()">Sign in</button>
+		</form>
+		<div *ngIf="invalidLogin" class="alert alert-danger alert-dismissible fade show mx-3" role="alert">
+			<div>username and password do not match</div>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="invalidLoginAlert()">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	</div>
+</div>
