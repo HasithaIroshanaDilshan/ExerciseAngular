@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { LoginService } from './login/login.service'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,8 +11,6 @@ export class AppComponent {
 	title = 'ExerciseAngular';
 	
 	constructor(
-		private loginService: LoginService,
-		private route: ActivatedRoute,
 		private router: Router) { }
 
 	ngOnInit() {

@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
 	constructor(
 		private loginservice: LoginService,
 		private route: ActivatedRoute,
-		private router: Router  
-		) { }
+		private router: Router
+	) { }
 
 	loginForm = new FormGroup({
 		email: new FormControl('', [Validators.required, Validators.email]),
@@ -33,19 +33,19 @@ export class LoginComponent implements OnInit {
 	/**
 	 * sign in button click
 	 */
-	signIn(){
+	signIn() {
 		this.submitted = true;
-		if(this.loginForm.valid){
+		if (this.loginForm.valid) {
 			let email = this.loginForm.get('email').value
 			let password = this.loginForm.get('password').value
-			if(this.loginservice.loginValidate(email, password)){
+			if (this.loginservice.loginValidate(email, password)) {
 				console.log('logging suc')
 				this.router.navigateByUrl('dashboard');
-			}else{
+			} else {
 				console.log('logging false')
 				this.invalidLogin = true;
 			}
-		}else{
+		} else {
 			return
 		}
 
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
 	/**
 	 * hide error messages showed for form inputs
 	 */
-	closeAlert(){
+	closeAlert() {
 		console.log('close alert')
 		this.submitted = false;
 		this.invalidLogin = false;
@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
 	/**
 	 * close invalid logging alert
 	 */
-	invalidLoginAlert(){
+	invalidLoginAlert() {
 		this.invalidLogin = false;
 	}
 
