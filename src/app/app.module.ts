@@ -10,13 +10,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table'  
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
+import { DirectiveComponent } from './dashboard/directive/directive.component';
+import { HighlightDirective } from './dashboard/directive/highlight.directive'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationBarComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    DirectiveComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
@@ -26,7 +36,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserAnimationsModule,
     MatSliderModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatInputModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

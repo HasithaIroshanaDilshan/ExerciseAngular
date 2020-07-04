@@ -1,0 +1,50 @@
+<app-navigation-bar></app-navigation-bar>
+<div>
+	<div class="row">
+		<div class="card mx-auto mt-3" style="width: 30rem;">
+
+			<div class="card-header">
+				<h4 class="text-center">Input something in the input box:</h4>
+			</div>
+			<div class="card-body">
+				<p>Name: <input type="text" ng-model="firstName" [(ngModel)]="firstName"></p>
+				<p>You wrote: {{ firstName }}</p>
+			</div>
+
+		</div>
+
+		<div class="card mx-auto mt-3" style="width: 30rem;">
+			<div class="card-header">
+				<h4 class="text-center">Attribute directive</h4>
+			</div>
+			<div class="card-body">
+				<div>
+					<input type="radio" name="colors" (click)="color='lightgreen'">Green
+					<input type="radio" name="colors" (click)="color='yellow'">Yellow
+					<input type="radio" name="colors" (click)="color='cyan'">Cyan
+				</div>
+			</div>
+			
+			<p [appHighlight]="color">Highlight me!</p>
+
+			<p [appHighlight]="color" defaultColor="violet">
+				Highlight me too!
+			</p>
+
+
+
+			<!-- <div class="card-header">
+				<h4 class="text-center">Input something in the input box:</h4>
+			</div>
+			<div class="card-body">
+				<p>Name: <input type="text" ng-model="firstName" ngModel></p>
+				<p appHighlight>You wrote: {{ firstName }}</p>
+			</div> -->
+
+		</div>
+	</div>
+
+</div>
+
+
+<p>directive works!</p>

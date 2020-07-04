@@ -1,0 +1,94 @@
+{
+   "usersData":[
+      {
+         "id":"1",
+         "name":"Maia A",
+         "progress":"59",
+         "color":"maroon"
+      },
+      {
+         "id":"2",
+         "name":"Asher J",
+         "progress":"35",
+         "color":"red"
+      },
+      {
+         "id":"3",
+         "name":"Olivia A",
+         "progress":"97",
+         "color":"orange"
+      },
+      {
+         "id":"4",
+         "name":"Atticus O",
+         "progress":"50",
+         "color":"yellow"
+      },
+      {
+         "id":"5",
+         "name":"Amelia T",
+         "progress":"32",
+         "color":"olive"
+      },
+      {
+         "id":"6",
+         "name":"Jack C",
+         "progress":"30",
+         "color":"green"
+      },
+      {
+         "id":"7",
+         "name":"Charlotte O",
+         "progress":"59",
+         "color":"purple"
+      },
+      {
+         "id":"8",
+         "name":"Theodore I",
+         "progress":"75",
+         "color":"fuchsia"
+      },
+      {
+         "id":"9",
+         "name":"Isla V",
+         "progress":"7",
+         "color":"lime"
+      },
+      {
+         "id":"10",
+         "name":"Oliver J",
+         "progress":"62",
+         "color":"teal"
+      },
+      {
+         "id":"11",
+         "name":"Isabella T",
+         "progress":"98",
+         "color":"aqua"
+      },
+      {
+         "id":"12",
+         "name":"Jasper J",
+         "progress":"55",
+         "color":"blue"
+      },
+      {
+         "id":"13",
+         "name":"Cora A",
+         "progress":"91",
+         "color":"navy"
+      },
+      {
+         "id":"14",
+         "name":"Levi J",
+         "progress":"89",
+         "color":"black"
+      },
+      {
+         "id":"15",
+         "name":"Violet T",
+         "progress":"92",
+         "color":"gray"
+      }
+   ]
+}

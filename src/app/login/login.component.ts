@@ -39,9 +39,7 @@ export class LoginComponent implements OnInit {
 			let email = this.loginForm.get('email').value
 			let password = this.loginForm.get('password').value
 			if(this.loginservice.loginValidate(email, password)){
-				//navigate
 				console.log('logging suc')
-
 				this.router.navigateByUrl('dashboard');
 			}else{
 				console.log('logging false')
