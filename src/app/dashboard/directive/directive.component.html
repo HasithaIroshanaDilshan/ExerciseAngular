@@ -1,21 +1,18 @@
 <app-navigation-bar></app-navigation-bar>
 <div>
-	<div class="row">
-		<div class="card mx-auto mt-3" style="width: 30rem;">
-
+	<div class="row ml-3">
+		<div class="card m-3 w-25" style="width: 30rem;">
 			<div class="card-header">
-				<h4 class="text-center">Input something in the input box:</h4>
+				<h4 class="text-center">Text to show in content</h4>
 			</div>
 			<div class="card-body">
-				<p>Name: <input type="text" ng-model="firstName" [(ngModel)]="firstName"></p>
-				<p>You wrote: {{ firstName }}</p>
+				<p>Input: <input type="text" ng-model="firstName" (input)='textToshow = $event.target.value'></p>
 			</div>
-
 		</div>
 
-		<div class="card mx-auto mt-3" style="width: 30rem;">
+		<div class="card my-3 w-25" style="width: 30rem;">
 			<div class="card-header">
-				<h4 class="text-center">Attribute directive</h4>
+				<h4 class="text-center">Content text color</h4>
 			</div>
 			<div class="card-body">
 				<div>
@@ -24,27 +21,24 @@
 					<input type="radio" name="colors" (click)="color='cyan'">Cyan
 				</div>
 			</div>
-			
-			<p [appHighlight]="color">Highlight me!</p>
+		</div>
+	</div>
 
-			<p [appHighlight]="color" defaultColor="violet">
-				Highlight me too!
-			</p>
+	<div class="row ml-5">
+		<h6 class="text-center">Content will be changed with the input after you move mouse over it </h6>
+	</div>
 
-
-
-			<!-- <div class="card-header">
-				<h4 class="text-center">Input something in the input box:</h4>
+	<div class="row">
+		<div class="card m-5 w-50">
+			<div class="card-header">
+				<h4 class="text-center">Content </h4>
 			</div>
 			<div class="card-body">
-				<p>Name: <input type="text" ng-model="firstName" ngModel></p>
-				<p appHighlight>You wrote: {{ firstName }}</p>
-			</div> -->
-
+				<p [appHighlight]="color" defaultColor="violet" [inputText]="textToshow">
+					{{ textToshow }}
+				</p>
+			</div>
 		</div>
 	</div>
 
 </div>
-
-
-<p>directive works!</p>

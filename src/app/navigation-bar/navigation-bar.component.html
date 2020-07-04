@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav [@changBgColor]="isYellow ? 'Yellow' : 'Lime'" (@changBgColor.done)="toggle($event)" class="navbar navbar-light navbar-expand-lg">
 	<a class="navbar-brand" href="/">Software Engineer Exercise</a>
 	<button *ngIf="showLinks" class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse"
 		data-target="#navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
@@ -7,17 +7,16 @@
 	</button>
 
 	<div *ngIf="showLinks" class="collapse navbar-collapse" id="navbarTogglerDemo02" [ngbCollapse]="isCollapsed">
-		<ul  class="navbar-nav ml-auto mt-2 mt-lg-0">
+		<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 			<li class="nav-item">
 				<a class="nav-link" href="dashboard">Dashboard</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="/dashboard/directive">Directive​</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link" (click)='logout()'>Log out​</a>
+			</li>
 		</ul>
-		<!-- <form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form> -->
 	</div>
 </nav>

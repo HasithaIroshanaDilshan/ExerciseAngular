@@ -1,40 +1,28 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class LoginService {
-	private loggedIn: boolean = false
 	constructor() { }
-	@Output() logged: EventEmitter<any> = new EventEmitter();
-	
+
 	/**
 	 * check email and password to login
 	 * @param email 
 	 * @param password 
 	 */
-	loginValidate(email: string, password: string): boolean{
-		if(email == 'example@email.com' && password == 'example#123'){
-			this.loggedIn = true
-			this.loggingEvent()
+	loginValidate(email: string, password: string): boolean {
+		if (email == 'example@email.com' && password == 'example#123') {
+			this.setLogStatus('true')
 			return true
 		}
 		return false
 	}
 
 	/**
-	 * logging succuses and log out evetns
+	 * set loggin status to session storage
 	 */
-	public loggingEvent() {
-		this.logged.emit(
-			{status: this.loggedIn}
-		);
-	}
-
-	/**
-	 * returng logging status
-	 */
-	getLoggingStatus() {
-		return this.logged;
+	setLogStatus(satatus: string) {
+		sessionStorage.setItem('loggedIn', satatus);
 	}
 }

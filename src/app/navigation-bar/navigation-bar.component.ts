@@ -1,35 +1,70 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login/login.service'
+import { Router } from '@angular/router';
+import { trigger, state, transition, animate, style } from '@angular/animations';
 @Component({
 	selector: 'app-navigation-bar',
+	animations: [
+		trigger('changBgColor', [
+			state('Yellow', style({
+				backgroundColor: 'Yellow',
+			})),
+			state('Lime', style({
+				backgroundColor: 'Lime',
+			})),
+			transition('* => *', [
+				animate('2s')
+			]),
+		]),
+
+	],
 	templateUrl: './navigation-bar.component.html',
 	styleUrls: ['./navigation-bar.component.scss']
 })
 export class NavigationBarComponent implements OnInit {
 
-	public isCollapsed: boolean = true;
-	private subscription: any;
-	public showLinks: boolean = false;
+	isCollapsed: boolean = true;
+	showLinks: boolean = false;
+	isYellow = true;
 
-	constructor(private loginService: LoginService) { }
+	constructor(
+		private router: Router
+	) { }
 
 	ngOnInit(): void {
-		this.subscription = this.loginService.getLoggingStatus().subscribe(
-			status => this.showOptions(status)
-		);
-	}
-
-	showOptions(status: any) {
-		console.log("status");
-		console.log(status);
-		if(status.status == true){
+		let status = sessionStorage.getItem('loggedIn')
+		if (status == 'true') {
 			this.showLinks = true;
-		}else{
-			this.showLinks = false;
-		}	
+		}
 	}
 
-	ngOnDestroy() {
-		this.subscription.unsubscribe();
+	/**
+	 * log out 
+	 * clear session storage
+	 */
+	logout() {
+		console.log('logout')
+		this.router.navigateByUrl('login');
+		sessionStorage.setItem('loggedIn', 'false')
 	}
+
+	/**
+	 * show dashboard and directive links after logged in
+	 * @param status 
+	 */
+	showOptions(status: any) {
+		if (status.status == true) {
+			this.showLinks = true;
+		} else {
+			this.showLinks = false;
+		}
+	}
+
+	/**
+	 * toggle nav bar color to animate
+	 * @param event 
+	 */
+	toggle(event) {
+		this.isYellow = !this.isYellow;
+	}
+
 }
