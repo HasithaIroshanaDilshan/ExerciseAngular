@@ -43,7 +43,7 @@ export class NavigationBarComponent implements OnInit {
 	 */
 	logout() {
 		console.log('logout')
-		this.router.navigateByUrl('login');
+		this.router.navigate(['login']);
 		sessionStorage.setItem('loggedIn', 'false')
 	}
 

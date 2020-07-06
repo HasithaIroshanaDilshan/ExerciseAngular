@@ -19,7 +19,7 @@ export class AppComponent {
 		//check user logged in or not
 		let status = sessionStorage.getItem('loggedIn')
 		if(status != 'true'){
-			this.router.navigateByUrl('login');
+			this.router.navigate(['login']);
 		}
 	}
 
